@@ -24,20 +24,11 @@ const Payment = () => {
   const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
-  
-  // const [clientSecret, setClientSecret] = useState("");
-
-  // async function getClientSecret(){
-  //     const { secret } = await axios.post(`${server}/payment/process`);
-  //     console.log(secret.clientSecret);
-  //     setClientSecret(secret.clientSecret);
-  //   }
     
 
   useEffect(() => {
     const orderData = JSON.parse(localStorage.getItem("latestOrder"));
     setOrderData(orderData);
-    // getClientSecret();
   }, []);
 
   const createOrder = (data, actions) => {
@@ -125,7 +116,6 @@ const Payment = () => {
       paymentData,
       config,
       );
-      // console.log(data);
       const client_secret = data.client_secret;
 
 

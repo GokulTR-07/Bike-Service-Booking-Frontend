@@ -5,8 +5,6 @@ import { MdBorderClear } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from"@mui/material";
-// import { DataGrid } from "@material-ui/data-grid";
-// import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllOrdersOfAdmin } from "../../redux/actions/order";
 import Loader from "../Layout/Loader";
@@ -41,13 +39,6 @@ const AdminDashboardMain = () => {
           : "redColor";
       },
     },
-    // {
-    //   field: "itemsQty",
-    //   headerName: "Items Qty",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.7,
-    // },
 
     {
       field: "total",
@@ -70,7 +61,6 @@ const AdminDashboardMain = () => {
   adminOrders.forEach((item) => {
       row.push({
         id: item._id,
-        // itemsQty: item?.cart?.reduce((acc, item) => acc + item.qty, 0),
         total: item?.totalPrice + "₹",
         status: item?.status,
         createdAt: item?.createdAt.slice(0,10),

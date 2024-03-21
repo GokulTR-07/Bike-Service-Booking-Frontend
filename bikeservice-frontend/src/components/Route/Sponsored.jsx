@@ -16,7 +16,7 @@ const Sponsored = () => {
         </div>
         <div className="flex items-start">
           <img
-src="https://i.pinimg.com/736x/cb/b2/ec/cbb2ec041bd80a0a3ffafb5f6a7ffa77.jpg"
+            src="https://i.pinimg.com/736x/cb/b2/ec/cbb2ec041bd80a0a3ffafb5f6a7ffa77.jpg"
             style={{width:"190px", objectFit:"cover"}}
             alt=""
           />

@@ -11,7 +11,6 @@ import {
   footerProductLinks,
   footerSupportLinks,
 } from "../../static/data";
-import { GiShop } from "react-icons/gi";
 import { RiEBikeFill } from "react-icons/ri";
 
 const Footer = () => {

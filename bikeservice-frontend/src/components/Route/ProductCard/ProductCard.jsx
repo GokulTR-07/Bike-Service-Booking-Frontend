@@ -19,7 +19,7 @@ import { useEffect } from "react";
 import { addTocart } from "../../../redux/actions/cart";
 import { toast } from "react-toastify";
 import Ratings from "../../Products/Ratings";
-import { backend_url } from "../../../server";
+
 
 const ProductCard = ({ data,isEvent }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -51,13 +51,9 @@ const ProductCard = ({ data,isEvent }) => {
     if (isItemExists) {
       toast.error("Service already in cart!");
     } else {
-      // if (data.stock < 1) {
-      //   toast.error("Product stock limited!");
-      // } else {
         const cartData = { ...data, qty: 1 };
         dispatch(addTocart(cartData));
         toast.success("Service added to cart successfully!");
-      // }
     }
   };
 
@@ -67,7 +63,6 @@ const ProductCard = ({ data,isEvent }) => {
         <div className="flex justify-end"></div>
         <Link to={`${isEvent === true ? `/product/${data._id}?isEvent=true` : `/product/${data._id}`}`}>
           <img
-          // src={`${backend_url}${data.images && data.images[0]}`}
             src={`${data.images && data.images[0]?.url}`}
             alt=""
             className="w-full h-[170px] object-contain"

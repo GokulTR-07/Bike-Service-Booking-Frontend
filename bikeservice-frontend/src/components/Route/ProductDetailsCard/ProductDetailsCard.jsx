@@ -8,7 +8,6 @@ import {
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import styles from "../../../styles/styles";
-import { backend_url } from "../../../server";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addTocart } from "../../../redux/actions/cart";
@@ -33,13 +32,9 @@ const ProductDetailsCard = ({ setOpen, data }) => {
     if (isItemExists) {
       toast.error("Service already in cart!");
     } else {
-      // if (data.stock < count) {
-      //   toast.error("Product stock limited!");
-      // } else {
         const cartData = { ...data, qty: count };
         dispatch(addTocart(cartData));
         toast.success("Service added to cart successfully!");
-      // }
     }
   };
 
@@ -75,7 +70,6 @@ const ProductDetailsCard = ({ setOpen, data }) => {
             <div className="block w-full 800px:flex">
               <div className="w-full 800px:w-[50%]">
                 <img src={`${data.images && data.images[0]?.url}`} alt="" className="mb-4"/> 
-                {/* <img src={`${backend_url}${data.images && data.images[0]}`} alt="" classNam/>e="mb-4"/> */}
                 <div className="flex">
                   <Link to={`/shop/preview/${data.shop._id}`} className="flex">
                     <img
@@ -87,7 +81,6 @@ const ProductDetailsCard = ({ setOpen, data }) => {
                       <h3 className={`${styles.shop_name}`}>
                         {data.shop.name}
                       </h3>
-                      {/* <h5 className="pb-3 text-[15px]">({data?.ratings}) Ratings</h5> */}
                     </div>
                   </Link>
                 </div>

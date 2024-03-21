@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter, Routes, Route
-  // , Navigate
 } from 'react-router-dom';
 import {LoginPage, SignupPage, ActivationPage, HomePage, ProductsPage, ProductDetailsPage ,AboutUs, EventsPage, FAQPage, ProfilePage, ShopCreatePage, SellerActivationPage, ShopLoginPage, CheckoutPage, PaymentPage, OrderSuccessPage, OrderDetailsPage, TrackOrderPage, UserInbox} from './routes/Routes.js';
 import { ToastContainer } from "react-toastify";
@@ -36,7 +35,7 @@ function App() {
 
   async function getStripeApiKey() {
     const { data } = await axios.get(`${server}/payment/stripeapikey`);
-    console.log(data.stripeApiKey)
+    // console.log(data.stripeApiKey)
     setStripeApiKey(loadStripe(data.stripeApiKey));
   }
 

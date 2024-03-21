@@ -4,7 +4,6 @@ import Footer from '../components/Layout/Footer';
 import ProductDetails from "../components/Products/ProductDetails";
 import { useParams, useSearchParams } from "react-router-dom";
 import { useEffect } from 'react';
-// import { productData } from '../static/data';
 import SuggestedProduct from "../components/Products/SuggestedProduct.jsx";
 import { useSelector } from "react-redux";
 

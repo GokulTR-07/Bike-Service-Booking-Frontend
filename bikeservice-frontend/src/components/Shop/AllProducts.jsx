@@ -1,6 +1,4 @@
 import { DataGrid } from '@mui/x-data-grid';
-// import { DataGrid } from "@material-ui/data-grid";
-// import { Button } from "@material-ui/core";
 import { Button } from"@mui/material";
 import React, { useEffect } from "react";
 import { AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
@@ -39,22 +37,6 @@ const AllProducts = () => {
       minWidth: 100,
       flex: 0.6,
     },
-    // {
-    //   field: "Stock",
-    //   headerName: "Stock",
-    //   type: "number",
-    //   minWidth: 80,
-    //   flex: 0.5,
-    // },
-
-    // {
-    //   field: "sold",
-    //   headerName: "Sold out",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.6,
-    // },
-
     {
       field: "Preview",
       flex: 0.8,
@@ -101,8 +83,6 @@ const AllProducts = () => {
         id: item._id,
         name: item.name,
         price: "₹" + item.discountPrice,
-        // Stock: item.stock,
-        // sold: item?.sold_out,
       });
     });
 

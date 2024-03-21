@@ -7,8 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllOrdersOfShop } from "../../redux/actions/order";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { DataGrid } from '@mui/x-data-grid';
-// import { DataGrid } from "@material-ui/data-grid";
-// import { Button } from "@material-ui/core";
 import { Button } from"@mui/material";
 
 const DashboardHero = () => {
@@ -16,19 +14,12 @@ const DashboardHero = () => {
   const { orders } = useSelector((state) => state.order);
   const { seller } = useSelector((state) => state.seller);
   const { products } = useSelector((state) => state.products);
-  // const [deliveredOrder, setDeliveredOrder] = useState(null);
 
   useEffect(() => {
      dispatch(getAllOrdersOfShop(seller._id));
      dispatch(getAllProductsShop(seller._id));
-
-    //  const orderData = orders && orders.filter((item)=> item.status === "Delivered");
-    //  setDeliveredOrder(orderData);
   }, [dispatch]);
 
-  // const totalEarningWithoutTax = deliveredOrder ? deliveredOrder.reduce((acc,item)=> acc + item.totalPrice, 0) : 0 ;
-  // const serviceCharge = totalEarningWithoutTax ? totalEarningWithoutTax * 0.1 : 0;
-  // const availableBalance = (totalEarningWithoutTax - serviceCharge).toFixed(2) || 0 ;
   
   const availableBalance = seller?.availableBalance
 
@@ -46,13 +37,6 @@ const DashboardHero = () => {
           : "redColor";
       },
     },
-    // {
-    //   field: "itemsQty",
-    //   headerName: "Items Qty",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.7,
-    // },
 
     {
       field: "total",
@@ -88,7 +72,6 @@ const DashboardHero = () => {
   orders && orders.forEach((item) => {
     row.push({
         id: item._id,
-        itemsQty: item.cart.reduce((acc, item) => acc + item.qty, 0),
         total: "₹" + item.totalPrice,
         status: item.status,
       });

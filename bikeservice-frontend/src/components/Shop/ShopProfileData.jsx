@@ -108,7 +108,6 @@ const ShopProfileData = ({ isOwner }) => {
             allReviews.map((item, index) => (
               <div className="w-full flex my-4 border-2-white p-3 bg-white">
                 <img
-                  // src={`${backend_url}${item.user.avatar}`}
                   src={`${item.user.avatar?.url}`}
                   className="w-[50px] h-[50px] rounded-full"
                   alt=""
@@ -121,8 +120,6 @@ const ShopProfileData = ({ isOwner }) => {
                   <p className="font-[400] text-[#000000a7]">{item?.comment}</p>
                   <p className="text-[#000000a7] text-[14px]">
                   {item?.createdAt?.slice(0, 10)}
-                    {/* {item.createdAt().format('DD-MMM-YYYY')} */}
-                    {/* {"few days ago"} */}
                     </p>
                 </div>
               </div>

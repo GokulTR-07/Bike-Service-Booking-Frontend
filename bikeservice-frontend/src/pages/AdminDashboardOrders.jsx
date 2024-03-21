@@ -32,14 +32,6 @@ const AdminDashboardOrders = () => {
       },
     },
 
-    // {
-    //   field: "itemsQty",
-    //   headerName: "Items Qty",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.7,
-    // },
-
     {
       field: "total",
       headerName: "Total",
@@ -61,7 +53,6 @@ const AdminDashboardOrders = () => {
     adminOrders.forEach((item) => {
       row.push({
         id: item._id,
-        // itemsQty: item?.cart?.reduce((acc, item) => acc + item.qty, 0),
         total: item?.totalPrice + "₹",
         status: item?.status,
         createdAt: item?.createdAt.slice(0,10),

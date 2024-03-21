@@ -19,7 +19,6 @@ const CreateProduct = () => {
   const [tags, setTags] = useState("");
   const [originalPrice, setOriginalPrice] = useState();
   const [discountPrice, setDiscountPrice] = useState();
-  // const [stock, setStock] = useState();
 
   useEffect(() => {
     if (error) {
@@ -65,7 +64,6 @@ const CreateProduct = () => {
     newForm.append("tags", tags);
     newForm.append("originalPrice", originalPrice);
     newForm.append("discountPrice", discountPrice);
-    // newForm.append("stock", stock);
     newForm.append("shopId", seller._id);
     dispatch(
       createProduct(
@@ -77,7 +75,6 @@ const CreateProduct = () => {
         tags,
         originalPrice,
         discountPrice,
-        // stock,
         shopId: seller._id,
         images,
       }
@@ -199,7 +196,6 @@ const CreateProduct = () => {
             {images &&
               images.map((i) => (
                 <img
-                // src={URL.createObjectURL(i)}
                   src={i}
                   key={i}
                   alt=""

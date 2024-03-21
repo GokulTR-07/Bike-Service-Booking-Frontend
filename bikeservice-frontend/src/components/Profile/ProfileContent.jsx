@@ -8,8 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { backend_url, server } from "../../server";
 import styles from "../../styles/styles";
 import { DataGrid } from '@mui/x-data-grid';
-// import { DataGrid } from "@material-ui/data-grid";
-// import { Button } from "@material-ui/core";
 import { Button } from"@mui/material";
 import { Link } from "react-router-dom";
 import { MdTrackChanges } from "react-icons/md";
@@ -79,27 +77,6 @@ const ProfileContent = ({ active }) => {
     reader.readAsDataURL(e.target.files[0]);
   };
 
-  // const handleImage = async (e) => {
-  //   const file = e.target.files[0];
-  //   setAvatar(file);
-
-  //   const formData = new FormData();
-
-  //   formData.append("image", e.target.files[0]);
-
-  //   await axios.put(`${server}/user/update-avatar`, formData, {
-  //     headers: {
-  //       "Content-Type" : "multipart/form-data",
-  //     },
-  //     withCredentials: true,
-  //   }).then((response)=>{
-  //     dispatch(loadUser());
-  //     toast.success('Avatar updated Successfully');
-  //     // window.location.reload();
-  //   }).catch((error)=>{
-  //     toast.error(error);
-  //   })
-  // };
 
   return (
     <div className="w-full">
@@ -109,7 +86,6 @@ const ProfileContent = ({ active }) => {
           <div className="flex justify-center w-full">
             <div className="relative">
               <img
-                // src={`${backend_url}${user?.avatar}`}
                 src={`${user?.avatar?.url}`}
                 className="w-[150px] h-[150px] rounded-full object-cover border-[3px] border-[#3ad132]"
                 alt=""
@@ -255,13 +231,6 @@ const AllOrders = () => {
           : "redColor";
       },
     },
-    // {
-    //   field: "itemsQty",
-    //   headerName: "Items Qty",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.7,
-    // },
 
     {
       field: "total",
@@ -298,7 +267,6 @@ const AllOrders = () => {
     orders.forEach((item) => {
       row.push({
         id: item._id,
-        // itemsQty: item.cart.length,
         total: "₹" + item.totalPrice,
         status: item.status,
       });
@@ -345,13 +313,6 @@ const AllRefundOrders = () => {
           : "redColor";
       },
     },
-    // {
-    //   field: "itemsQty",
-    //   headerName: "Items Qty",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.7,
-    // },
 
     {
       field: "total",
@@ -388,8 +349,6 @@ const AllRefundOrders = () => {
   eligibleOrders.forEach((item) => {
       row.push({
         id: item._id,
-        // itemsQty: item.orderItems.length,
-        // itemsQty: item.cart.length,
         total: "₹" + item.totalPrice,
         status: item.status,
       });
@@ -432,13 +391,6 @@ const TrackOrder = () => {
           : "redColor";
       },
     },
-    // {
-    //   field: "itemsQty",
-    //   headerName: "Items Qty",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.7,
-    // },
 
     {
       field: "total",

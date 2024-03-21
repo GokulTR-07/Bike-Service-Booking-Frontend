@@ -23,19 +23,12 @@ const WithdrawMoney = () => {
     bankHolderName: "",
     bankAddress: "",
   });
-  // const [deliveredOrder, setDeliveredOrder] = useState(null);
-  // const { orders } = useSelector((state) => state.order);
 
 
   useEffect(() => {
     dispatch(getAllOrdersOfShop(seller._id));
-    // const orderData = orders && orders.filter((item)=> item.status === "Delivered");
-    // setDeliveredOrder(orderData);
   }, [dispatch]);
 
-  // const totalEarningWithoutTax = deliveredOrder && deliveredOrder.reduce((acc,item)=> acc + item.totalPrice, 0);
-  // const serviceCharge = totalEarningWithoutTax * 0.1;
-  // const availableBalance = (totalEarningWithoutTax - serviceCharge).toFixed(2);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

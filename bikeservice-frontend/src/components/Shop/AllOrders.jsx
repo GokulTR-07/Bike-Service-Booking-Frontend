@@ -1,6 +1,4 @@
 import { DataGrid } from '@mui/x-data-grid';
-// import { DataGrid } from "@material-ui/data-grid";
-// import { Button } from "@material-ui/core";
 import { Button } from"@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,13 +31,6 @@ const AllOrders = () => {
           : "redColor";
       },
     },
-    // {
-    //   field: "itemsQty",
-    //   headerName: "Items Qty",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.7,
-    // },
 
     {
       field: "total",
@@ -76,7 +67,6 @@ const AllOrders = () => {
     orders.forEach((item) => {
       row.push({
         id: item._id,
-        // itemsQty: item.cart.length,
         total: "₹" + item.totalPrice,
         status: item.status,
       });

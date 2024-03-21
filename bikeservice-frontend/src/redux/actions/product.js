@@ -10,7 +10,6 @@ export const createProduct =
     tags,
     originalPrice,
     discountPrice,
-    // stock,
     shopId,
     images
   ) =>
@@ -28,7 +27,6 @@ export const createProduct =
         tags,
         originalPrice,
         discountPrice,
-        // stock,
         shopId,
         images,
       );

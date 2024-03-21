@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { IoBagHandleOutline } from "react-icons/io5";
-import { HiOutlineMinus, HiPlus } from "react-icons/hi";
 import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addTocart, removeFromCart } from "../../redux/actions/cart";
-import { toast } from "react-toastify";
-import { backend_url } from "../../server";
+// import { toast } from "react-toastify";
 
 const Cart = ({ setOpenCart }) => {
   const { cart } = useSelector((state) => state.cart);
@@ -96,43 +94,11 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
   const [value, setValue] = useState(data.qty);
   const totalPrice = data.discountPrice * value;
 
-  // const increment = (data) => {
-  //   if (data.stock < value) {
-  //     toast.error("Product stock limited!");
-  //   } else {
-  //     setValue(value + 1);
-  //     const updateCartData = { ...data, qty: value + 1 };
-  //     quantityChangeHandler(updateCartData);
-  //   }
-  // };
-
-  // const decrement = (data) => {
-  //   setValue(value === 1 ? 1 : value - 1);
-  //   const updateCartData = { ...data, qty: value === 1 ? 1 : value - 1 };
-  //   quantityChangeHandler(updateCartData);
-  // };
-
   return (
     <div className="border-b p-4">
       <div className="w-full flex items-center">
-        {/* <div>
-          <div
-            className={`bg-[#e44343] border border-[#e4434373] rounded-full w-[25px] h-[25px] ${styles.normalFlex} justify-center cursor-pointer`}
-            onClick={() => increment(data)}
-          >
-            <HiPlus size={18} color="#fff" />
-          </div>
-          <span className="pl-[10px]">{data.qty}</span>
-          <div
-            className="bg-[#a7abb14f] rounded-full w-[25px] h-[25px] flex items-center justify-center cursor-pointer"
-            onClick={() => decrement(data)}
-          >
-            <HiOutlineMinus size={16} color="#7d879c" />
-          </div>
-        </div> */}
         <img
         src={`${data?.images[0]?.url}`}
-          // src={`${backend_url}${data?.images[0]}`}
           alt=""
           className="w-[130px] h-min ml-2 mr-2 rounded-[5px]"
         />

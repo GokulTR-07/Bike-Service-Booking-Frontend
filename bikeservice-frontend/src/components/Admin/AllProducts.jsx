@@ -1,14 +1,8 @@
-// import { Button } from "@material-ui/core";
-// import { DataGrid } from "@material-ui/data-grid";
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from"@mui/material";
 import React, { useEffect } from "react";
 import { AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getAllProductsShop } from "../../redux/actions/product";
-import { deleteProduct } from "../../redux/actions/product";
-import Loader from "../Layout/Loader";
 import axios from "axios";
 import { server } from "../../server";
 import { useState } from "react";
@@ -36,21 +30,6 @@ const AllProducts = () => {
       minWidth: 100,
       flex: 0.6,
     },
-    // {
-    //   field: "Stock",
-    //   headerName: "Stock",
-    //   type: "number",
-    //   minWidth: 80,
-    //   flex: 0.5,
-    // },
-
-    // {
-    //   field: "sold",
-    //   headerName: "Sold out",
-    //   type: "number",
-    //   minWidth: 130,
-    //   flex: 0.6,
-    // },
     {
       field: "Preview",
       flex: 0.8,
@@ -80,8 +59,6 @@ const AllProducts = () => {
         id: item._id,
         name: item.name,
         price: "₹" + item.discountPrice,
-        // Stock: item.stock,
-        // sold: item?.sold_out,
       });
     });
 

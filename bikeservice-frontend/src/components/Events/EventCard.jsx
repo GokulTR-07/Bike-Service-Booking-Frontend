@@ -15,13 +15,9 @@ const EventCard = ({ active, data }) => {
     if (isItemExists) {
       toast.error("Service already in cart!");
     } else {
-      // if (data.stock < 1) {
-      //   toast.error("Product stock limited!");
-      // } else {
         const cartData = { ...data, qty: 1 };
         dispatch(addTocart(cartData));
         toast.success("Service added to cart successfully!");
-      // }
     }
   }
   return (
